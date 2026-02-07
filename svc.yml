@@ -8,6 +8,6 @@ spec:
     app: zomato
   ports:
   - protocol: TCP
-    port: 3000          # Service port
-    targetPort: 3000  # Container port
+    port: 3000          
+    targetPort: 3000  
 

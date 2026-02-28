@@ -5,13 +5,19 @@ metadata:
   labels:
     app: zomato
 spec:
-  replicas: 
+  replicas: 5
+  selector:
+    matchLabels:
+      app: zomato
   template:
-    spec:
-      containers:
-      - name: mydockerprojectfor5pm
-        image: sueesh144/steakhouse:latest
-        command: ["/bin/sh", "-c"]
-        args: ["python manage.py migrate && gunicorn --bind 0.0.0.0:8000 restaurant.wsgi:application"]
-        ports:
-        - containerPort: 8000
+    metadata:
+      labels:
+        app: zomato
+   spec:
+   containers:
+   - name: mydockerprojectfor5pm
+     image: sueesh144/steakhouse:latest
+     command: ["/bin/sh", "-c"]
+     args: ["python manage.py migrate && gunicorn --bind 0.0.0.0:8000 restaurant.wsgi:application"]
+     ports:
+     - containerPort: 8000

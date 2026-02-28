@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: mydockerprojectfor5pm
-        image: sueesh144/gabrimage:latest
+        image: sueesh144/steakhouse:latest
         ports:
         - containerPort: 80
